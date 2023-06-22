@@ -10,6 +10,11 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Variables */
+:root {
+    --header-height: 46px;
+}
+
 /*
 1.Từ ngoài vào trong 
 2.Từ trên xuống dưới
@@ -28,8 +33,12 @@ html {
 }
 
 #header {
-    height: 46px;
+    height: var(--header-height);
     background-color: #000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 #nav {
@@ -104,6 +113,7 @@ html {
 #slider {
     min-height: 500px;
     background-color: #333;
+    margin-top: var(--header-height);
 }
 
 #content {
