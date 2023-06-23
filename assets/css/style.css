@@ -144,6 +144,57 @@ html {
 
 }
 
+#content .content-section {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    font-size: 15px;
+    margin-top: 25px;
+    font-style: italic;
+    color: #3d3d3d;
+}
+
+#content .about-text {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member-list {
+    margin-top: 60px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#content .member-item {
+}
+
+#content .member-name {
+    font-size: 15px;
+}
+
+#content .member-img {
+    width: 70%;
+    margin-top: 8px;
+    border-radius: 3px;
+}
+
+
+
 #footer {
 
 }
