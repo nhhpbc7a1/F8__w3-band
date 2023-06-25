@@ -29,9 +29,38 @@ html {
 4.Kiểu dáng (kiểu chữ, hình tròn, vuông,...)
  */
 
- .text-white {
+ /* Common */
+
+.text-white {
     color: #fff !important;
- }
+}
+
+.clear {
+    clear: both;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-third {
+    width: 33.33%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-full{
+    width: 100%;
+}
 
 #main {
 
@@ -248,47 +277,35 @@ html {
 }
 
 .places-list {
+
     margin-top: 32px;
-    margin-left: -8px;
-    margin-right: -8px;
+    margin-bottom: 48px;
     display: flex;
-    padding-bottom: 48px;
 }
 
-.place-item {
-    width: 33.33%;
-    height: 400px;
-    padding: 0 8px;
-}
+/* ****** Changed to hover picture layer */
 
-.place-item .container-img {
+.container-img {
     display: block;
     width: 100%;
     height: 30%;
-    position: relative;
 }
 .place-img {
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .place-img-layer {
     display: block;
-    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
+    transform: translateY(-100%);
     opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
-.place-item .container-img:hover .place-img-layer {
+.container-img:hover .place-img-layer {
     opacity: 1;
 }
 
@@ -297,8 +314,6 @@ html {
     color: #000;
     font-size: 15px;
     padding: 16px;
-    width: 100%;
-    height: 70%;
 }
 
 .place-heading {
@@ -325,6 +340,7 @@ html {
 
     display: inline-block;
     margin-top: 15px;
+    border: none;
 }
 
 .place-buy-btn:hover {
@@ -345,5 +361,117 @@ html {
     left: 0;
     right: 0;
 
-    background-color: rgba(0,0,0,0.5)
+    background-color: rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal-container {
+    width: 80%;
+    background-color: #fff;
+    position: relative;
+    animation: modalFadeIn ease 0.4s;
+}
+
+.modal .modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 18px 18px;
+
+    font-size: 12px;
+    color: #fff;
+}
+.modal .ti-close{
+}
+
+.modal .modal-close:hover{
+    cursor: pointer;
+    background-color: #ccc;
+    color: #000;
+}
+
+
+.modal .modal-header {
+    width: 100%;
+    padding: 48px 0;
+    background-color: #009688;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+.modal .ti-bag{
+    margin-right: 10px;
+}
+
+.modal .modal-body {
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .modal-label {
+    font-weight: 520;
+}
+
+.modal .modal-input {
+    margin-top: 12px;
+    padding: 12px 8px;
+    
+    font-size: 15px;
+    border: 1px solid #ccc;
+}
+
+.modal .modal-input + .modal-label {
+    margin-top: 20px;
+}
+
+.modal #buy-tickets {
+    width: 100%;
+    padding: 16px 0;
+    margin-top: 16px;
+    background-color: #009688;
+
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.modal #buy-tickets:hover {
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+}
+
+.modal .modal-footer {
+    text-align: right;
+    margin: 16px 16px 40px 0;  
+}
+
+.modal .modal-footer a {
+    color: #2196F3;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
