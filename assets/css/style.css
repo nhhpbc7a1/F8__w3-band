@@ -7,6 +7,7 @@
 }
 
 html {
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -31,6 +32,39 @@ html {
 
  /* Common */
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.opa-1-to-05{
+    opacity: 1;
+}
+.opa-1-to-05:hover{
+    opacity: 0.5;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.mt-24 {
+    margin-top: 24px !important;
+}
 .text-white {
     color: #fff !important;
 }
@@ -60,6 +94,29 @@ html {
 
 .col-full{
     width: 100%;
+}
+
+.btn-blackwhite-grayblack {
+    padding: 10px 14px;
+    background-color: #000;
+    color: #fff;
+
+    font-size: 14.5px;
+    letter-spacing: 0.5px;
+    border: none;
+}
+.btn-blackwhite-grayblack:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.po-ab {
+    position: absolute;
+}
+
+.right {
+    right: 0;
 }
 
 #main {
@@ -181,7 +238,7 @@ html {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 16px;
+    padding: 80px 16px;
 }
 
 #content .section-heading {
@@ -279,7 +336,6 @@ html {
 .places-list {
 
     margin-top: 32px;
-    margin-bottom: 48px;
     display: flex;
 }
 
@@ -332,27 +388,58 @@ html {
     line-height: 1.4;
 }
 
-.place-buy-btn {
-    text-decoration: none;
-    background-color: #000;
-    color: #fff;
-    padding: 11px 16px;
-
-    display: inline-block;
-    margin-top: 15px;
-    border: none;
+/* Contact form */
+.contact-content {
+    margin-top: 48px;
 }
 
-.place-buy-btn:hover {
-    background-color: #ccc;
-    color: #000;
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"]{
+    display: inline-block;
+    width: 30px;
+}
+
+.contact-form {
+    font-size: 15px;
+    position: relative;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-form .btn-blackwhite-grayblack
+{
+    float: right;
+}
+
+/* Map section */
+.map-section img{
+    width: 100%;
 }
 
 /* Footer section */
 #footer {
-
+    padding: 72px 16px;
 }
 
+.socials-list a {
+    color: #666666;
+    font-size: 20px;
+    text-decoration: none;
+}
+.copyright a{
+    color: #666666;
+}
+.copyright {
+    color: #666666;
+}
 
 .modal{
     position: fixed;
