@@ -131,6 +131,7 @@ html {
     left: 0;
     right: 0;
     top: 0;
+    /* overflow: hidden; */
 }
 
 #nav {
@@ -201,6 +202,18 @@ html {
     line-height: 46px;
     padding: 0 21px;
 }
+#header .mobile-menu-btn{
+    display: none;
+    float: right;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#header .menu-icon {
+    line-height: 46px;
+    padding: 0 24px;
+}
 
 #slider {
     margin-top: var(--header-height);
@@ -235,7 +248,7 @@ html {
 }
 
 #content .content-section {
-    width: 70%;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding: 80px 16px;
@@ -391,6 +404,10 @@ html {
 /* Contact form */
 .contact-content {
     margin-top: 48px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 130px; */
 }
 
 .contact-info {

@@ -7,6 +7,7 @@
     <title>The band</title>
     <link rel="shortcut icon" href="./assets/img/title-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
     <!-- https://themify.me/themify-icons -->
 </head>
@@ -30,6 +31,10 @@
                         <li><a href="#">Media</a></li>
                     </ul>
                 </li>
+
+                <div id="mobile-menu" class="btn-blackwhite-grayblack mobile-menu-btn ">
+                    <i class="menu-icon ti-menu"></i>
+                </div>    
             </ul>
             <!-- End: Nav -->
 
@@ -96,7 +101,7 @@
 
                     <!-- Places -->
                     <div class="row places-list">
-                        <div class="col col-third">
+                        <div class="col col-full mt-24">
                             <div class="container-img">
                                 <img src="./assets/img/places/place1.jpg" alt="New York" class="place-img">
                                 <div class="place-img-layer"></div>
@@ -112,7 +117,7 @@
                             <div class="clear"></div>
                         </div>
 
-                        <div class="col col-third">
+                        <div class="col col-full mt-24">
                             <div class="container-img">
                                 <img src="./assets/img/places/place2.jpg" alt="New York" class="place-img">
                                 <div class="place-img-layer"></div>
@@ -128,7 +133,7 @@
                             <div class="clear"></div>
                         </div>
 
-                        <div class="col col-third">
+                        <div class="col col-full mt-24">
                             <div class="container-img">
                                 <img src="./assets/img/places/place3.jpg" alt="New York" class="place-img">
                                 <div class="place-img-layer"></div>
@@ -152,38 +157,40 @@
                 <h2 class="section-heading">CONTACT</h2>
                 <p class="section-sub-heading">Fan? Drop a note!</p>
 
-                <div class="row contact-content flex-row">
-                    <div class="col col-half contact-info">
-                        <p><i class="ti-location-pin"></i>Chicago, US</p>
-                        <p><i class="ti-mobile"></i>Phone: +00 151515</p>
-                        <p><i class="ti-email"></i>Email: mail@mail.com</p>
+                <div class="flex-center">                    
+                    <div class="row contact-content flex-row flex-center">
+                        <div class="col contact-info">
+                            <p><i class="ti-location-pin"></i>Chicago, US</p>
+                            <p><i class="ti-mobile"></i>Phone: +00 151515</p>
+                            <p><i class="ti-email"></i>Email: mail@mail.com</p>
+                        </div>
+    
+                        <div class="col contact-form">
+                            <form action="">
+                                <div class="row flex-row">
+                                    <div class="col">
+                                        <input type="text" name="" required placeholder="Name" id="" class="form-control">
+                                    </div>
+    
+                                    <div class="col">
+                                        <input type="Email" name="" required placeholder="Email" id="" class="form-control">
+                                    </div>
+    
+                                </div>
+    
+                                <div class="row mt-8">
+                                    <div class="col col-full">
+                                        <input type="text" name="" required placeholder="Message" id="" class="form-control">
+                                    </div>
+    
+                                </div>
+    
+                                <input class="mt-16 btn-blackwhite-grayblack" type="submit" value="SEND">
+    
+                            </form>
+                        </div>
+    
                     </div>
-
-                    <div class="col col-half contact-form">
-                        <form action="">
-                            <div class="row flex-row">
-                                <div class="col col-half">
-                                    <input type="text" name="" required placeholder="Name" id="" class="form-control">
-                                </div>
-
-                                <div class="col col-half">
-                                    <input type="Email" name="" required placeholder="Email" id="" class="form-control">
-                                </div>
-
-                            </div>
-
-                            <div class="row mt-8">
-                                <div class="col col-full">
-                                    <input type="text" name="" required placeholder="Message" id="" class="form-control">
-                                </div>
-
-                            </div>
-
-                            <input class="mt-16 btn-blackwhite-grayblack" type="submit" value="SEND">
-
-                        </form>
-                    </div>
-
                 </div>
             </div>
             <!-- End:  Contact section -->
@@ -242,6 +249,39 @@
         </div>
     </div>
 
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        // đóng/ mở menu
+        mobileMenu.onclick = function(){
+            var isClose = header.clientHeight === headerHeight;
+            if (isClose){
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        // Tự động đóng khi chọn Menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        console.log(menuItems); 
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            
+            console.log(menuItem.nextElementSibling);
+            menuItem.onclick = function(event){
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu){
+                    event.preventDefault();
+                } else{
+                    header.style.height = null;
+                }
+                // console.log(this);
+            }
+        }
+    </script>
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
