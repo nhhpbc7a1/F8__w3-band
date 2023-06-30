@@ -218,7 +218,7 @@ html {
 #slider {
     margin-top: var(--header-height);
     padding-top: 50%;
-    background: url(/assets/img/slider/slider-pic-1.jpg) no-repeat center /cover;
+    background: url(../img/slider/slider-pic-1.jpg) no-repeat center /cover;
     position: relative;
 }
 
@@ -411,6 +411,8 @@ html {
 }
 
 .contact-info {
+    margin-top: -42px;
+    height: 100%;
     font-size: 18px;
     line-height: 1.5;
 }
@@ -418,6 +420,15 @@ html {
 .contact-info i[class*="ti-"]{
     display: inline-block;
     width: 30px;
+}
+
+.contact-info a{
+    color: blue;
+    opacity: 0.7;
+}
+
+.contact-info a:hover{
+    opacity: 1;
 }
 
 .contact-form {
@@ -448,7 +459,7 @@ html {
 
 .socials-list a {
     color: #666666;
-    font-size: 20px;
+    font-size: 25px;
     text-decoration: none;
 }
 .copyright a{
